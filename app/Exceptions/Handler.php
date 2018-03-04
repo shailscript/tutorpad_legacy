@@ -48,6 +48,29 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceOf AuthenticationException) {
+          $guard = array_get($exception->guards(), 0);
+          switch ($guard) {
+            case 'admin':
+              $login = 'admin.login';
+              break;
+
+            default:
+              $login = 'login';
+              break;
+          }
+          return redirect()->guest(route($login));
+        }
         return parent::render($request, $exception);
     }
 }
+
+/**
+  * TODO :
+  * Route admin to admin login and user to user login
+  * Setup routes for the same (or check)
+  * Set up Middlewares accordingly to prevent users from accessing unauthorised pages
+  * Setup logout for users and admins
+  * Setup routes for the same (or check)
+  *
+  */
