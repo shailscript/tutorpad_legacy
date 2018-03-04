@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\auth;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Auth;
 class AdminLoginController extends Controller
 {
     public function __construct(){
@@ -24,7 +24,7 @@ class AdminLoginController extends Controller
       ]);
       //attempt login
       if (Auth::guard('admin')->attempt(['email'=>$request->email, 'password' => $request->password], $request->remember)) {
-        return redirect()->intended('admin.dashboard');
+        return redirect()->intended('/admin/dashboard');
       }
       //sucessful, redirect to dashboard (AdminController@index)
       //unsuccessful, redirect to showLoginForm
