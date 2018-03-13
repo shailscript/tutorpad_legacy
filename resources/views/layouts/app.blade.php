@@ -66,12 +66,12 @@
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a href="{{ route('logout') }}" class="dropdown-item"
+                                <a href="{{ Auth::guard('admin')->check() ? route('admin.logout') : route('user.logout') }}" class="dropdown-item"
                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     Logout
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                <form id="logout-form" action="{{ (Auth::guard('admin')->check()) ? route('admin.logout') : route('user.logout') }}" method="POST"
                                       style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
@@ -93,7 +93,7 @@
             @endif
         @endforeach --}}
     </div>
-
+@include('layouts.components.who')
     @yield('content')
 </div>
 

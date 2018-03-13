@@ -69,12 +69,12 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ url('/home') }}">Buy</a>
+                    <a href="{{ url('/home') }}">Browse Institutes</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                        <a href="{{ route('admin.login')}}">Vendor Login</a>
-                        <a href="{{ route('admin.register')}}">Join the vendors!</a>
+                        <a href="{{ route('register') }}">Sign up</a>
+                        <a href="{{ route('admin.login')}}">Institute Login</a>
+                        <a href="{{ route('admin.register')}}">Register your Institute</a>
                         @endauth
             </div>
         @endif
@@ -86,4 +86,5 @@
         </div>
     </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 </html>
