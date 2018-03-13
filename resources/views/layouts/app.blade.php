@@ -33,33 +33,10 @@
                 <ul class="navbar-nav">
                     @if (Auth::guest())
                         <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.login')}}">Vendor Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.register')}}">Join the vendors!</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Sign up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.login')}}">Institute Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.register')}}">Register your Institute</a></li>
                     @else
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{-- route('wishlist.index') --}}">
-                                <i class="fa fa-heart"></i>
-                                <sup>
-                                    <span class="badge badge-pill badge-info">
-                                        {{-- {{ Cart::instance('wishlist')->count(false) }} --}}
-                                    </span>
-                                </sup>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{-- route('cart.index') --}}">
-                                <i class="fa fa-shopping-cart"></i>
-                                <sup>
-                                    <span class="badge badge-pill badge-primary">
-                                        {{-- {{ Cart::instance('default')->count(false) }} --}}
-                                    </span>
-                                </sup>
-                            </a>
-                        </li>
-
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
@@ -115,4 +92,44 @@
 <br>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
 </html>
