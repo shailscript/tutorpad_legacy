@@ -70,7 +70,7 @@
             @endif
         @endforeach --}}
     </div>
-@include('layouts.components.who')
+{{-- @include('layouts.components.who') --}}
     @yield('content')
 </div>
 
