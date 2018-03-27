@@ -71,10 +71,10 @@
                 @auth
                     <a href="{{ url('/home') }}">Browse Institutes</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Sign up</a>
-                        <a href="{{ route('admin.login')}}">Institute Login</a>
-                        <a href="{{ route('admin.register')}}">Register your Institute</a>
+                        <a href="{{ route('login') }}">Student Login</a>
+                        <a href="{{ route('register') }}">Student Sign up</a>
+                        <a href="{{ route('admin.login')}}">Tutor Login</a>
+                        <a href="{{ route('admin.register')}}">Register your Tuition</a>
                         @endauth
             </div>
         @endif
