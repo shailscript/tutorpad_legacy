@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
             <a class="navbar-brand" href="{{-- route('product.index') --}}">
-                BUIER{{-- config('app.name', 'Buier') --}}
+                TutorPad{{-- config('app.name', 'Buier') --}}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,10 +32,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     @if (Auth::guest())
-                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Sign up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.login')}}">Institute Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.register')}}">Register your Institute</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Student Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Student Sign up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.login')}}">Tutor Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.register')}}">Register your Tuition</a></li>
                     @else
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -70,7 +70,6 @@
             @endif
         @endforeach --}}
     </div>
-{{-- @include('layouts.components.who') --}}
     @yield('content')
 </div>
 
@@ -85,7 +84,8 @@
         <a href="#">Back to top</a>
     </p>
 
-    <p>Enjoy Buier. Add some nice description. Enjoy Buier. Add some nice description. Enjoy Buier. Add some nice description. Enjoy Buier. Add some nice description.</p>
+    <p>TutorPad is a one stop solution for Tuition classes. TutorPad is awesome. Add some nice description.
+       TutorPad is awesome. Add some nice description. TutorPad is awesome. Add some nice description.</p>
     </div>
 </footer>
 
