@@ -54,7 +54,7 @@ class AdminRegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'job_title' => 'required|string|max:255',
+            'contact_number' => 'required|string|max:10',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -70,7 +70,11 @@ class AdminRegisterController extends Controller
         return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'job_title' => $data['job_title'],
+            'contact_number' => $data['contact_number'],
+            'tuition_type' => $data['tuition_type'],
+            'class_from' => $data['class_from'],
+            'class_to' => $data['class_to'],
+            'board_type' => $data['board_type'],
             'password' => Hash::make($data['password']),
         ]);
     }
