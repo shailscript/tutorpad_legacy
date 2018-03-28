@@ -13,8 +13,8 @@
     <!-- Styles -->
     <style>
         html, body {
-            background-color: #fff;
-            color: #636b6f;
+            background-image: url(https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-0.3.5&s=472152ddffbf77d3dbfb816f353a5f56&auto=format&fit=crop&w=1500&q=80);
+            color: white;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
             height: 100vh;
@@ -50,7 +50,7 @@
         }
 
         .links > a {
-            color: #636b6f;
+            color: white;
             padding: 0 25px;
             font-size: 12px;
             font-weight: 600;
