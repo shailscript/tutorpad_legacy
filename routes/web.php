@@ -13,13 +13,16 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('landingPage');
 
+// Authentication Routes
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
+
+// Admin specified Routes
 Route::prefix('admin')->group(function(){
   Route::get('/register', 'Auth\AdminRegisterController@showRegistrationForm');
   Route::post('/register', 'Auth\AdminRegisterController@register')->name('admin.register');
