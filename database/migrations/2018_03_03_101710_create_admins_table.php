@@ -17,11 +17,6 @@ class CreateAdminsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('contact_number');
-            $table->string('tuition_type');
-            $table->string('class_from');
-            $table->string('class_to');
-            $table->string('board_type');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
