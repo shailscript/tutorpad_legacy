@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Session;
+
 
 class AdminController extends Controller
 {
@@ -23,6 +26,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
+         $admin = Auth::guard('admin')->user();
+         return view('admin')->withAdmin($admin);
     }
 }
