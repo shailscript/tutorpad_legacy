@@ -50,8 +50,17 @@
                                aria-haspopup="true" aria-expanded="false">
                                 {{ Auth::user()->name }}
                             </a>
+
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                <a href="{{ Auth::guard('admin')->check() ? route('admin.logout') : route('user.logout') }}" class="dropdown-item"
+                    @if ( Auth::guard('web')->check() )
+                      <a href="{{ route('stats.boards') }}" class="dropdown-item">Board wise statistics</a>
+                      <a href="{{ route('stats.ratings') }}" class="dropdown-item">Ratings wise statistics</a>
+                      <a href="{{ route('stats.locations') }}" class="dropdown-item">Location wise statistics</a>
+                      <div class="dropdown-divider"></div>
+                    @endif
+                    <a
+                    href="{{ Auth::guard('admin')->check() ? route('admin.logout') : route('user.logout') }}"
+                    class="dropdown-item"
                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     Logout
                                 </a>
@@ -100,7 +109,7 @@
     <br>
   </body>
 
-<br>
+  @yield('scripts')
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
