@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>TutorPad{{-- config('app.name', 'Buier') --}}</title>
+    <title>TutorPad</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -21,8 +21,8 @@
 <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
-            <a class="navbar-brand" href="{{-- route('product.index') --}}">
-                TutorPad{{-- config('app.name', 'Buier') --}}
+          <a class="navbar-brand" href="{{ route('institute.index') }}">
+            TutorPad
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,10 +32,18 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     @if (Auth::guest())
-                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Student Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Student Sign up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.login')}}">Tutor Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('admin.register')}}">Register your Tuition</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('login') }}">Student Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('register') }}">Student Sign up</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('admin.login')}}">Tutor Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('admin.register')}}">Register your Tuition</a>
+                </li>
                     @else
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -62,13 +70,13 @@
     </nav>
 
     <div class="container">
-        {{-- @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @foreach (['danger', 'warning', 'success', 'info'] as $msg)
             @if(Session::has('alert-' . $msg))
                 <p class="alert alert-{{ $msg }}">
                     {{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 </p>
             @endif
-        @endforeach --}}
+            @endforeach
     </div>
     @yield('content')
 </div>
@@ -85,9 +93,12 @@
     </p>
 
     <p>TutorPad is a one stop solution for Tuition classes. TutorPad is awesome. Add some nice description.
-       TutorPad is awesome. Add some nice description. TutorPad is awesome. Add some nice description.</p>
+           TutorPad is awesome. Add some nice description. TutorPad is awesome. Add some nice description.
+        </p>
     </div>
 </footer>
+    <br>
+  </body>
 
 <br>
 
