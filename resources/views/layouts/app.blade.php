@@ -46,8 +46,13 @@
                 </li>
                     @else
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
+                  <a
+                  href="#"
+                  class="nav-link dropdown-toggle"
+                  id="navbarDropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -65,7 +70,10 @@
                                     Logout
                                 </a>
 
-                                <form id="logout-form" action="{{ (Auth::guard('admin')->check()) ? route('admin.logout') : route('user.logout') }}" method="POST"
+                    <form
+                    id="logout-form"
+                    action="{{ (Auth::guard('admin')->check()) ? route('admin.logout') : route('user.logout') }}"
+                    method="POST"
                                       style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
