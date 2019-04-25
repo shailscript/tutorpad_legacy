@@ -18,6 +18,14 @@ Route::get('/', function () {
 // Authentication Routes
 Auth::routes();
 
+// Admin Resource Routes for Institute CRUD
+Route::resource('/institute', 'InstitutesController');
+
+
+// Guest Routes
+Route::get('/institutes/all', 'InstitutesController@index')->name('institute.all');
+Route::get('/institutes/single/{id}', 'InstitutesController@getSingle')->name('institute.single');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
