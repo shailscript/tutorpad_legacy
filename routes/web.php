@@ -26,6 +26,7 @@ Route::resource('/institute', 'InstitutesController');
 Route::get('/institutes/all', 'InstitutesController@index')->name('institute.all');
 Route::get('/institutes/single/{id}', 'InstitutesController@getSingle')->name('institute.single');
 
+// Student specified Routes
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 

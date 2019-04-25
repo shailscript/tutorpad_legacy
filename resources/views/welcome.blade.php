@@ -14,6 +14,7 @@
     <style>
         html, body {
             background-image: url(https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-0.3.5&s=472152ddffbf77d3dbfb816f353a5f56&auto=format&fit=crop&w=1500&q=80);
+            background-size: cover;
             color: white;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
@@ -48,6 +49,10 @@
         .title {
             font-size: 84px;
         }
+        a{
+          text-decoration: none;
+          color: #fff;
+        }
 
         .links > a {
             color: white;
@@ -69,8 +74,10 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
+                    <a href="http://localhost:8001/">Blog</a>
                     <a href="{{ url('/home') }}">Browse Institutes</a>
                     @else
+                        <a href="http://localhost:8001/">Blog</a>
                         <a href="{{ route('login') }}">Student Login</a>
                         <a href="{{ route('register') }}">Student Sign up</a>
                         <a href="{{ route('admin.login')}}">Tutor Login</a>
@@ -81,7 +88,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                TutorPad
+              <a href="{{ route('institute.index') }}">TutorPad</a>
             </div>
         </div>
     </div>
