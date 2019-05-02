@@ -21,6 +21,8 @@ Auth::routes();
 // Admin Resource Routes for Institute CRUD
 Route::resource('/institute', 'InstitutesController');
 
+// Guest Resource Routes for Reviews CRUD
+Route::resource('/review', 'ReviewsController');
 
 // Guest Routes
 Route::get('/institutes/all', 'InstitutesController@index')->name('institute.all');
