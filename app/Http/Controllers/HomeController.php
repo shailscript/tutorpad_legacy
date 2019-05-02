@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+    public function index(){
+      $data['cbse'] = DB::table('institutes')->where('board_type', 'CBSE')->count();
+      $data['icse'] = DB::table('institutes')->where('board_type', 'ICSE')->count();
+      $data['gseb'] = DB::table('institutes')->where('board_type', 'GSEB')->count();
+        return view('boards')->withData($data);
     }
 }
