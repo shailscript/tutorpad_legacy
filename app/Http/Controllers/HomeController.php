@@ -23,8 +23,26 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function ratings()
     {
+      $data['edu5'] = DB::table('reviews')->where('edu', 5)->count();
+      $data['edu4'] = DB::table('reviews')->where('edu', 4)->count();
+      $data['edu3'] = DB::table('reviews')->where('edu', 3)->count();
+      $data['edu2'] = DB::table('reviews')->where('edu', 2)->count();
+      $data['edu1'] = DB::table('reviews')->where('edu', 1)->count();
+      $data['infra5'] = DB::table('reviews')->where('infra', 5)->count();
+      $data['infra4'] = DB::table('reviews')->where('infra', 4)->count();
+      $data['infra3'] = DB::table('reviews')->where('infra', 3)->count();
+      $data['infra2'] = DB::table('reviews')->where('infra', 2)->count();
+      $data['infra1'] = DB::table('reviews')->where('infra', 1)->count();
+      $data['faculty5'] = DB::table('reviews')->where('faculty', 5)->count();
+      $data['faculty4'] = DB::table('reviews')->where('faculty', 4)->count();
+      $data['faculty3'] = DB::table('reviews')->where('faculty', 3)->count();
+      $data['faculty2'] = DB::table('reviews')->where('faculty', 2)->count();
+      $data['faculty1'] = DB::table('reviews')->where('faculty', 1)->count();
+        return view('ratings')->withData($data);
+    }
+
     public function boards()
     {
       $data['cbse'] = DB::table('institutes')->where('board_type', 'CBSE')->count();
