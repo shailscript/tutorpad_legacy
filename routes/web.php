@@ -28,6 +28,9 @@ Route::get('/institutes/single/{id}', 'InstitutesController@getSingle')->name('i
 
 // Student specified Routes
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home/stats/boards', 'HomeController@boards')->name('stats.boards');
+Route::get('home/stats/ratings', 'HomeController@ratings')->name('stats.ratings');
+Route::get('home/stats/locations', 'HomeController@locations')->name('stats.locations');
 Route::post('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 
